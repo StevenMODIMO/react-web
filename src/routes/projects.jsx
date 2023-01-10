@@ -1,7 +1,10 @@
-export default function Projects() {
+import { AiFillProject } from 'react-icons/ai'
+
+export default function Projects () {
     return (
         <div>
-            <h1>Projects Component</h1>
+            <div>Projects Page</div>
+            <div><AiFillProject /></div>
         </div>
     )
 }

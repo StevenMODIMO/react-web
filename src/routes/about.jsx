@@ -1,7 +1,10 @@
-export default function About() {
+import { ImInfo } from 'react-icons/im'
+
+export default function About () {
     return (
-        <div>
-            <h1>About Component</h1>
+        <div >
+            <div>About Page</div>
+            <div><ImInfo /></div>
         </div>
     )
 }

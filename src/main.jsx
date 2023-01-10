@@ -1,30 +1,19 @@
-import React from 'react'
-import { createRoot}from 'react-dom/client'
-import './index.css'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import Navbar from './components/navbar'
-import Home from './routes/home'
-import About from './routes/about'
-import Projects from './routes/projects'
-
-const AppLayOut = () => {
-  return (
-    <>
-    <Navbar />
-    <Outlet />
-    </>
-  )
-}
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from "./routes/Home";
+import About from "./routes/about";
+import Projects from "./routes/projects";
+import Contact from './routes/contact'
+import Index from "./routes";
 
 const router = createBrowserRouter([
   {
-    element: <AppLayOut />,
     path: '/',
+    element: <Home />,
     children: [
-      {
-        path: '/',
-        element: <Home />
-      },
+      { index: true, element: <Index />},
       {
         path: 'about',
         element: <About />
@@ -32,12 +21,15 @@ const router = createBrowserRouter([
       {
         path: 'projects',
         element: <Projects />
+      },
+      {
+        path: 'contact',
+        element: <Contact />
       }
     ]
   }
 ])
 
-
-createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router} />
-)
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
